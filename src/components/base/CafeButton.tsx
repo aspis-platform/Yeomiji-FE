@@ -5,7 +5,7 @@ const BlogButton = () => {
   return (
     <StyledBlogButton>
       <StyledImage src={naverLogo} alt="Naver Cafe Logo" />
-      <span>블로그</span>
+      <span>카페</span>
     </StyledBlogButton>
   );
 };
