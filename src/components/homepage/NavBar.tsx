@@ -7,15 +7,17 @@ const NavBar = () => {
     <StyledNav>
       <StyledDiv>
         <Logo>
-          <img src={logo_image} />
+          <img src={logo_image} alt="yeomiji logo" />
         </Logo>
         <NavItem>
-          <a>홈</a>
-          <a>단체소개</a>
-          <a>입양</a>
-          <a>소식</a>
-          <a>봉사활동</a>
-          <a>후원 안내</a>
+          <NavItemContainer>
+            <NavLink href="#">홈</NavLink>
+            <NavLink href="#">단체소개</NavLink>
+            <NavLink href="#">입양</NavLink>
+            <NavLink href="#">소식</NavLink>
+            <NavLink href="#">봉사활동</NavLink>
+            <NavLink href="#">후원 안내</NavLink>
+          </NavItemContainer>
         </NavItem>
       </StyledDiv>
     </StyledNav>
@@ -24,32 +26,141 @@ const NavBar = () => {
 
 const Logo = styled.div`
   display: flex;
-  width: 264px;
-  height: 69px;
+  width: 200px;
+  height: 52px;
   flex-direction: row;
+  flex-shrink: 0;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
+
+const NavLink = styled.a`
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  text-align: center;
+  flex: 1;
+`;
+
+const NavItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 20px;
+
+  @media (max-width: 1440px) {
+    max-width: 800px;
+    gap: 15px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 600px;
+    gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 30px;
+  }
+`;
+
 const NavItem = styled.div`
   display: flex;
-  gap: 156px;
-  width: 1140px;
-  font-size: 24px;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
   font-weight: 500;
-  margin: 24px 0 16px 0;
+  margin: 16px 0 12px 0;
+  white-space: nowrap;
+
+  @media (max-width: 1440px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 12px 0;
+    font-size: 14px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    ${NavItemContainer} {
+      width: auto;
+      flex-wrap: nowrap;
+      padding: 0 12px;
+      min-width: min-content;
+      gap: 20px;
+    }
+
+    ${NavLink} {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+  }
 `;
+
 const StyledNav = styled.nav`
-  width: 100vw;
-  height: 144px;
-  padding: 45px 0 30px 0;
+  width: 100%;
+  height: 100px;
+  padding: 25px 0 20px 0;
   display: flex;
   justify-content: center;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 0;
+  }
 `;
+
 const StyledDiv = styled.div`
-  gap: 196px;
-  height: 69px;
   display: flex;
-  justify-content: space-between;
-  width: 1600px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  height: 55px;
+  padding: 0 40px;
+  gap: 60px;
+
+  @media (max-width: 1440px) {
+    gap: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+    height: auto;
+    gap: 0;
+    justify-content: center;
+  }
 `;
 
 export default NavBar;
