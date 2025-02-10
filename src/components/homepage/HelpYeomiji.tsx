@@ -29,13 +29,14 @@ const ButtonContainer = styled.div`
 `;
 const TitleContainer = styled.div`
   padding-left: 10%;
-  width: 100vh;
+  width: 100vw;
   color: ${theme.color.black};
   font-size: 20px;
   font-weight: 600;
 `;
 const StyledContainer = styled.section`
   padding: 76px 0 180px 0;
+  height: 626px;
   width: 100vw;
   display: flex;
   flex-direction: column;

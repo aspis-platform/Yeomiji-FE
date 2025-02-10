@@ -33,6 +33,7 @@ const TitleContainer = styled.div`
 `;
 const NTCContainer = styled.div`
   width: 100vw;
+  height:572px;
   background-color: ${theme.color.sub[3]};
   padding: 32px 0 50px 0;
   display: flex;
