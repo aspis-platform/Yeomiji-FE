@@ -23,38 +23,24 @@ const Footer = () => {
   );
 };
 
-// 최상위 App.js나 layout 컴포넌트에 추가할 스타일
-const PageWrapper = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
-
-const MainContent = styled.main`
-  flex: 1 0 auto;
-`;
-
 const FooterWrapper = styled.footer`
-  flex-shrink: 0;
   width: 100%;
+  height: 160px;
+  padding: 60px 20px;
   background-color: #f8f8f8;
   border-top: 1px solid #adadad;
   display: flex;
   align-items: center;
-  padding: 60px 0;
-  margin-top: auto;
 `;
 
 const FooterContent = styled.div`
   width: 80%;
-  max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 10%;
   display: flex;
   align-items: center;
   gap: 30px;
 
   @media (max-width: 768px) {
-    width: 90%;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
