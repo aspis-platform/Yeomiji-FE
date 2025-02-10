@@ -2,7 +2,7 @@ import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
 import NavBar from "./components/homepage/NavBar";
 import Footer from "./components/homepage/Footer";
-import HomepageMain from "./pages/homepage/HomepageMain";
+import HomepageMain from "./pages/HomepageMain";
 import styled from "styled-components";
 
 function Layout() {

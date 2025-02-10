@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo_image from "../../assets/yeomiji-logo.svg";
 import BlogButton from "../base/CafeButton";
 import AiChatButton from "../base/AiChatButton";
+import { theme } from "../../style/theme";
 
 const WelcomeBanner = () => {
   return (
@@ -37,7 +38,7 @@ const BannerWrapper = styled.div`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #DCF1CE;
+  background-color: ${theme.color.main[1]};
   height: 360px;
   display: flex;
   justify-content: center;
@@ -50,7 +51,7 @@ const BannerContent = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  
+
   @media (max-width: 768px) {
     width: 90%;
     padding: 40px 20px;
@@ -61,7 +62,7 @@ const MainContent = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  
+
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -84,7 +85,7 @@ const ContentContainer = styled.div`
 const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;
-  color: #333;
+  color: ${theme.color.black};
   margin: 0;
   letter-spacing: -0.5px;
 `;
@@ -105,7 +106,7 @@ const CircleButtons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
-  
+
   @media (max-width: 768px) {
     display: none;
   }
