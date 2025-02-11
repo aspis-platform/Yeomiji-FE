@@ -1,45 +1,95 @@
 import React from "react";
 import styled from "styled-components";
 
-const NTCCard = () => {
+interface DogProps {
+  name: string;
+  gender: string;
+  size: string;
+  age: number;
+  imageUrl: string;
+}
+
+const NTCCard: React.FC<DogProps> = ({ name, gender, size, age, imageUrl }) => {
   return (
-    <CardContainer>
-      <ImageContainer />
-      <TextContainer>
-        <NameContainer>
-          <Name>이름</Name>
-        </NameContainer>
-      </TextContainer>
-    </CardContainer>
+    <Card>
+      <ImageWrapper>
+        <DogImage src={imageUrl} alt="" />
+      </ImageWrapper>
+
+      <CardContent>
+        <Name>
+          {name} <Subtext>{gender}</Subtext>
+        </Name>
+        <TextBox>
+          <Info>
+            <BoldText>크기</BoldText>
+            <RegularText>{size}</RegularText>
+          </Info>
+          <Info>
+            <BoldText>나이</BoldText> {age}세
+          </Info>
+        </TextBox>
+      </CardContent>
+    </Card>
   );
 };
 
-const Name = styled.div`
-  font-size: 22px;
-  font-weight: 600;
+const Card = styled.div`
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
-const NameContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+const ImageWrapper = styled.div`
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 `;
-const TextContainer = styled.div`
+const DogImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+const CardContent = styled.div`
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: ;
+  gap: 20px;
 `;
-const ImageContainer = styled.div`
-  width: 100%;
-  height: 65%;
-  background-color: black;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+const Name = styled.div`
+  font-size: 20px;
+  font-weight: 600;
 `;
-const CardContainer = styled.div`
-  width: 280px;
-  height: 360px;
-  background-color: white;
-  border-radius: 20px;
+const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+const Subtext = styled.span`
+  font-size: 16px;
+  color: #9f9f9f;
+  margin-left: 5px;
+  font-weight: 500;
+`;
+const Info = styled.div`
+  font-size: 16px;
+  text-align: left;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+const BoldText = styled.span`
+  font-weight: 600;
+`;
+const RegularText = styled.span`
+  font-weight: 400;
 `;
 
 export default NTCCard;
