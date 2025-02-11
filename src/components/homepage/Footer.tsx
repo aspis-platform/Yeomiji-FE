@@ -27,8 +27,8 @@ const FooterWrapper = styled.footer`
   width: 100%;
   height: 160px;
   padding: 60px 20px;
-  background-color: #fff;
-  border-top: 1px solid #eee;
+  background-color: #f8f8f8;
+  border-top: 1px solid #adadad;
   display: flex;
   align-items: center;
 `;
@@ -51,7 +51,7 @@ const Logo = styled.div`
   img {
     width: 100px;
     height: auto;
-    filter: grayscale(100%) brightness(0.2);
+    filter: grayscale(100%) brightness(1.5);
     opacity: 0.9;
   }
 
@@ -69,7 +69,7 @@ const InfoContainer = styled.div`
 const Title = styled.h2`
   font-size: 21px;
   font-weight: 500;
-  color: #333;
+  color: #858585;
   margin: 0;
   letter-spacing: -0.3px;
 `;

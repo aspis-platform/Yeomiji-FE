@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import aiLogo from "../../assets/ai-icon.svg";
+import { theme } from "../../style/theme";
 
 const AiChatButton = () => {
   return (
@@ -28,7 +29,7 @@ const StyledAiChatButton = styled.button`
   span {
     font-size: 15px;
     font-weight: 500;
-    color: black;
+    color: ${theme.color.white};
   }
 
   &:hover {

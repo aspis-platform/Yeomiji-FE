@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import logo_image from "../../assets/yeomiji-logo.svg";
+import { theme } from "../../style/theme";
 
 const NavBar = () => {
   return (
@@ -8,6 +9,11 @@ const NavBar = () => {
       <StyledDiv>
         <Logo>
           <img src={logo_image} alt="yeomiji logo" />
+          <Title>
+            <p>
+              여미지 <br /> 여수 유기 동물 쉼터
+            </p>
+          </Title>
         </Logo>
         <NavItem>
           <NavItemContainer>
@@ -24,13 +30,23 @@ const NavBar = () => {
   );
 };
 
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${theme.color.main[4]};
+  font-size: 20px;
+  font-weight: 400;
+  flex-shrink: 0;
+`;
 const Logo = styled.div`
   display: flex;
-  width: 200px;
   height: 52px;
+  width: 200px;
   flex-direction: row;
+  align-items: center;
   flex-shrink: 0;
-  
+  gap: 8px;
+
   img {
     width: 100%;
     height: 100%;
@@ -101,7 +117,7 @@ const NavItem = styled.div`
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }

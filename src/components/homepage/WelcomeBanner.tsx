@@ -3,6 +3,7 @@ import styled from "styled-components";
 import logo_image from "../../assets/yeomiji-logo.svg";
 import BlogButton from "../base/CafeButton";
 import AiChatButton from "../base/AiChatButton";
+import { theme } from "../../style/theme";
 
 const WelcomeBanner = () => {
   return (
@@ -37,23 +38,29 @@ const BannerWrapper = styled.div`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #DCF1CE;
-  height: 360px;
+  background-color: ${theme.color.main[1]};
+  min-height: 360px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 `;
 
 const BannerContent = styled.div`
   width: 80%;
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
+  min-height: 360px;
   position: relative;
   display: flex;
   align-items: center;
-  
+  padding: 40px 0;
+  box-sizing: border-box;
+
   @media (max-width: 768px) {
+    padding: 30px 0;
+    flex-direction: column;
+    gap: 30px;
     width: 90%;
-    padding: 40px 20px;
   }
 `;
 
@@ -61,7 +68,8 @@ const MainContent = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
-  
+  width: 100%;
+
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -69,9 +77,12 @@ const MainContent = styled.div`
 `;
 
 const LogoWrapper = styled.div`
+  flex-shrink: 0;
+  
   img {
     width: 121px;
     height: 121px;
+    display: block;
   }
 `;
 
@@ -79,22 +90,24 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex-grow: 1;
 `;
 
 const Title = styled.h1`
   font-size: 32px;
   font-weight: 600;
-  color: #333;
+  color: ${theme.color.black};
   margin: 0;
   letter-spacing: -0.5px;
 `;
 
 const Description = styled.p`
-  font-size: 24px;
+  font-size: 20px;
   color: #666;
   line-height: 1.6;
   margin: 0;
   letter-spacing: -0.3px;
+  white-space: pre-line;
 `;
 
 const CircleButtons = styled.div`
@@ -105,9 +118,16 @@ const CircleButtons = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
-  
+
   @media (max-width: 768px) {
-    display: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
   }
 `;
 
