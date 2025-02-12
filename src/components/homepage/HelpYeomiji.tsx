@@ -35,7 +35,7 @@ const TitleContainer = styled.div`
   font-weight: 600;
 `;
 const StyledContainer = styled.section`
-  padding: 76px 0 180px 0;
+  padding: 76px 0;
   height: 626px;
   width: 100vw;
   display: flex;
@@ -44,8 +44,9 @@ const StyledContainer = styled.section`
   gap: 116px;
 
   @media (max-width: 768px) {
-    padding: 66px 0 140px 0;
+    padding: 66px 0;
     gap: 100px;
+    height: 520px;
   }
 `;
 

@@ -78,7 +78,7 @@ const MainContent = styled.div`
 
 const LogoWrapper = styled.div`
   flex-shrink: 0;
-  
+
   img {
     width: 121px;
     height: 121px;
