@@ -25,6 +25,7 @@ const StyledAiChatButton = styled.button`
   background: linear-gradient(to bottom right, #73d1fa, #b46dff);
   color: white;
   transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   span {
     font-size: 15px;

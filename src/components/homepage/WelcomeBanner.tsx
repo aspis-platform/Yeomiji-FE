@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import logo_image from "../../assets/yeomiji-logo.svg";
-import BlogButton from "../base/CafeButton";
 import AiChatButton from "../base/AiChatButton";
 import { theme } from "../../style/theme";
+import CafeButton from "../base/CafeButton";
 
 const WelcomeBanner = () => {
   return (
@@ -22,10 +22,6 @@ const WelcomeBanner = () => {
             </Description>
           </ContentContainer>
         </MainContent>
-        <CircleButtons>
-          <BlogButton />
-          <AiChatButton />
-        </CircleButtons>
       </BannerContent>
     </BannerWrapper>
   );
