@@ -17,10 +17,9 @@ const NavBar = () => {
         </Logo>
         <NavItem>
           <NavItemContainer>
-            <NavLink href="#">홈</NavLink>
-            <NavLink href="#">단체소개</NavLink>
+            <NavLink href="/">홈</NavLink>
+            <NavLink href="/introduction">단체소개</NavLink>
             <NavLink href="#">입양</NavLink>
-            <NavLink href="#">소식</NavLink>
             <NavLink href="#">봉사활동</NavLink>
             <NavLink href="#">후원 안내</NavLink>
           </NavItemContainer>

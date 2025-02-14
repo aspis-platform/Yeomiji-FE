@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import naverLogo from "../../assets/naver-cafe-logo.webp";
 
-const BlogButton = () => {
+const CafeButton = () => {
   return (
     <StyledBlogButton>
       <StyledImage src={naverLogo} alt="Naver Cafe Logo" />
@@ -21,13 +21,14 @@ const StyledBlogButton = styled.button`
   justify-content: center;
   cursor: pointer;
   gap: 4px;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   color: white;
   transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   span {
     font-size: 16px;
-    color:black;
+    color: black;
     font-weight: 500;
   }
 
@@ -42,5 +43,4 @@ const StyledImage = styled.img`
   object-fit: contain;
 `;
 
-
-export default BlogButton;
+export default CafeButton;
