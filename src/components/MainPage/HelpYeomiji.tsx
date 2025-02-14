@@ -1,7 +1,7 @@
 import React from "react";
-import DonateButton from "../MainButton/DonateButton";
-import AdoptButton from "../MainButton/AdoptButton";
-import VolunteerButton from "../MainButton/VolunteerButton";
+import DonateButton from "./DonateButton";
+import AdoptButton from "./AdoptButton";
+import VolunteerButton from "./VolunteerButton";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
 

@@ -1,24 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import dog_image from "../../assets/dog-image.svg";
+import volunteer_image from "../../assets/volunteer-image.svg";
 import { useNavigate } from "react-router-dom";
 
-const AdoptButton = () => {
-  {
-    /* 임시 경로 */
-  }
+const VolunteerButton = () => {
   const navigate = useNavigate();
   const navigator = () => {
-    navigate("/");
+    navigate("/volunteer");
   };
 
   return (
     <ButtonContainer onClick={navigator}>
       <MainButton>
-        <img src={dog_image} />
+        <img src={volunteer_image} />
       </MainButton>
-      <ButtonDesc>입양 안내</ButtonDesc>
+      <ButtonDesc>봉사활동 안내</ButtonDesc>
     </ButtonContainer>
   );
 };
@@ -42,6 +39,7 @@ const MainButton = styled.button`
   @media (max-width: 768px) {
     width: 100px;
     height: 100px;
+    border: 4px solid #575757;
   }
 `;
 const ButtonDesc = styled.p`
@@ -65,4 +63,4 @@ const ButtonContainer = styled.section`
   }
 `;
 
-export default AdoptButton;
+export default VolunteerButton;

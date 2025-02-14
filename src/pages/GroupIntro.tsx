@@ -1,6 +1,6 @@
 import React from "react";
-import IntroBanner from "../components/homepage/IntroBanner";
-import MainIntro from "../components/homepage/MainIntro";
+import IntroBanner from "../components/base/IntroBanner";
+import MainIntro from "../components/GroupIntroPage/MainIntro";
 import styled from "styled-components";
 
 const GroupIntro = () => {

@@ -1,12 +1,13 @@
 import "./App.css";
 import { Outlet, Route, Routes } from "react-router-dom";
-import NavBar from "./components/homepage/NavBar";
-import Footer from "./components/homepage/Footer";
+import NavBar from "./components/base/NavBar";
+import Footer from "./components/base/Footer";
 import HomepageMain from "./pages/HomepageMain";
 import styled from "styled-components";
 import GroupIntro from "./pages/GroupIntro";
 import AiChatButton from "./components/base/AiChatButton";
 import CafeButton from "./components/base/CafeButton";
+import VolunteerIntro from "./pages/VolunteerIntro";
 
 function Layout() {
   return (
@@ -22,6 +23,18 @@ function Layout() {
         <Footer />
       </StyledDiv>
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<HomepageMain />} />
+        <Route path="/introduction" element={<GroupIntro />} />
+        <Route path="/volunteer" element={<VolunteerIntro />} />
+      </Route>
+    </Routes>
   );
 }
 
@@ -42,16 +55,5 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   height: 100%;
 `;
-
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<HomepageMain />} />
-        <Route path="/introduction" element={<GroupIntro />} />
-      </Route>
-    </Routes>
-  );
-}
 
 export default App;
