@@ -8,6 +8,8 @@ import GroupIntro from "./pages/GroupIntro";
 import AiChatButton from "./components/base/AiChatButton";
 import CafeButton from "./components/base/CafeButton";
 import VolunteerIntro from "./pages/VolunteerIntro";
+import AdoptionInfo from "./pages/AdoptionInfo";
+import DonateInfo from "./pages/DonateInfo";
 
 function Layout() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/" element={<HomepageMain />} />
         <Route path="/introduction" element={<GroupIntro />} />
         <Route path="/volunteer" element={<VolunteerIntro />} />
+        <Route path="/adoption" element={<AdoptionInfo />} />
+        <Route path="/donation" element={<DonateInfo />} />
       </Route>
     </Routes>
   );

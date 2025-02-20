@@ -2,31 +2,30 @@ import React from "react";
 import { styled } from "styled-components";
 import logo_image from "../../assets/yeomiji-logo.svg";
 import { theme } from "../../style/theme";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const navigate = useNavigate();
-  const navigator = () => {
-    navigate("/");
-  };
   return (
     <StyledNav>
       <StyledDiv>
-        <Logo onClick={navigator}>
-          <img src={logo_image} alt="yeomiji logo" />
-          <Title>
-            <p>
-              여미지 <br /> 여수 유기 동물 쉼터
-            </p>
-          </Title>
-        </Logo>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Logo>
+            <img src={logo_image} alt="yeomiji logo" />
+            <Title>
+              <p>
+                여미지 <br /> 여수 유기 동물 쉼터
+              </p>
+            </Title>
+          </Logo>
+        </Link>
+
         <NavItem>
           <NavItemContainer>
             <NavLink href="/">홈</NavLink>
             <NavLink href="/introduction">단체소개</NavLink>
-            <NavLink href="#">입양</NavLink>
+            <NavLink href="/adoption">입양</NavLink>
             <NavLink href="/volunteer">봉사활동</NavLink>
-            <NavLink href="#">후원 안내</NavLink>
+            <NavLink href="/donation">후원 안내</NavLink>
           </NavItemContainer>
         </NavItem>
       </StyledDiv>
