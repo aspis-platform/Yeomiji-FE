@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
-import NTCCard from "../MainButton/NTCCard";
-import MoreButton from "../MainButton/MoreButton";
+import NTCCard from "../MainPage/NTCCard";
+import MoreButton from "./MoreButton";
 
 const AdoptNTC = () => {
   return (

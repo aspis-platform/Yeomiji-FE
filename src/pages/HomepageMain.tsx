@@ -1,8 +1,8 @@
 import React from "react";
-import WelcomeBanner from "../components/homepage/WelcomeBanner";
+import WelcomeBanner from "../components/MainPage/WelcomeBanner";
 import styled from "styled-components";
-import HelpYeomiji from "../components/homepage/HelpYeomiji";
-import AdoptNTC from "../components/homepage/AdoptNTC";
+import HelpYeomiji from "../components/MainPage/HelpYeomiji";
+import AdoptNTC from "../components/MainPage/AdoptNTC";
 
 const HomepageMain = () => {
   return (
