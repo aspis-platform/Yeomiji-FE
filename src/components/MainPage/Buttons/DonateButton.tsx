@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const DonateButton = () => {
   return (
-    <Link to={"/"} style={{ textDecoration: "none" }}>
+    <Link to={"/donation"} style={{ textDecoration: "none" }}>
       <ButtonContainer>
         <MainButton>
           <OrgImg src={donate_image} />

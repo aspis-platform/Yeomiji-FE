@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const AdoptButton = () => {
   return (
-    <Link to={"/"} style={{ textDecoration: "none" }}>
+    <Link to={"/adoption"} style={{ textDecoration: "none" }}>
       <ButtonContainer>
         <MainButton>
           <OrgImg src={dog_image} />
