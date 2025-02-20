@@ -2,23 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import HowToVolunteer from "./HowToVolunteer";
 import VolunteerAPL from "./VolunteerAPL";
+import Supplies from "./Supplies";
+import Guideline from "./Guideline";
 
 const MainVolunteer = () => {
   return (
     <VltContainer>
       <TextSection>
+        <Guideline />
         <HowToVolunteer />
         <VolunteerAPL />
-
-        {/* 
-
-        <TextContainer>
-          <TitleText>준비물</TitleText>
-        </TextContainer>
-
-        <TextContainer>
-          <TitleText>주의 사항(꼭 숙지해주세요)</TitleText>
-        </TextContainer> */}
+        <Supplies />
       </TextSection>
     </VltContainer>
   );
@@ -26,10 +20,10 @@ const MainVolunteer = () => {
 
 const TextSection = styled.section`
   width: 100vw;
-  padding: 0 26%;
+  padding: 0 18%;
   display: flex;
   flex-direction: column;
-  gap: 88px;
+  gap: 76px;
 `;
 const VltContainer = styled.section`
   width: 100vw;

@@ -43,8 +43,8 @@ const StyledSection = styled.section`
   flex-direction: column;
   gap: 40px;
   position: absolute;
-  right: 5%;
-  top: 200px;
+  right: 4%;
+  top: 180px;
   position: fixed;
   z-index: 10;
 `;

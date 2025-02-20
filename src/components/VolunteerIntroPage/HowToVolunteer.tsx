@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const HowToVolunteer = () => {
@@ -72,7 +71,7 @@ const TitleText = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 44px;
   font-size: 20px;
 `;
 
