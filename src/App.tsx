@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Outlet, Route, Routes } from "react-router-dom";
+import NavBar from "./components/base/NavBar";
+import Footer from "./components/base/Footer";
+import HomepageMain from "./pages/HomepageMain";
+import styled from "styled-components";
+import GroupIntro from "./pages/GroupIntro";
+import AiChatButton from "./components/base/AiChatButton";
+import CafeButton from "./components/base/CafeButton";
+import VolunteerIntro from "./pages/VolunteerIntro";
+import AdoptionInfo from "./pages/AdoptionInfo";
+import DonateInfo from "./pages/DonateInfo";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Layout() {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <StyledSection>
+        <CafeButton />
+        <AiChatButton />
+      </StyledSection>
+
+      <StyledDiv>
+        <NavBar />
+        <Outlet />
+        <Footer />
+      </StyledDiv>
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<HomepageMain />} />
+        <Route path="/introduction" element={<GroupIntro />} />
+        <Route path="/volunteer" element={<VolunteerIntro />} />
+        <Route path="/adoption" element={<AdoptionInfo />} />
+        <Route path="/donation" element={<DonateInfo />} />
+      </Route>
+    </Routes>
+  );
+}
+
+const StyledSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+  right: 4%;
+  top: 180px;
+  position: fixed;
+  z-index: 10;
+`;
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+`;
+
+export default App;
