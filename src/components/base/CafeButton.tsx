@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import naverLogo from "../../assets/naver-cafe-logo.webp";
+import { Link } from "react-router-dom";
 
 const CafeButton = () => {
   return (
-    <StyledBlogButton>
-      <StyledImage src={naverLogo} alt="Naver Cafe Logo" />
-      <span>카페</span>
-    </StyledBlogButton>
+    <Link
+      to={"https://cafe.naver.com/943400/4572?tc=shared_link"}
+      style={{ textDecoration: "none" }}
+      target="_blank"
+    >
+      <StyledBlogButton>
+        <StyledImage src={naverLogo} alt="Naver Cafe Logo" />
+        <span>카페</span>
+      </StyledBlogButton>
+    </Link>
   );
 };
 
