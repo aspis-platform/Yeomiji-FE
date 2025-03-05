@@ -21,11 +21,11 @@ const NavBar = () => {
 
         <NavItem>
           <NavItemContainer>
-            <NavLink href="/">홈</NavLink>
-            <NavLink href="/introduction">단체소개</NavLink>
-            <NavLink href="/adoption">입양</NavLink>
-            <NavLink href="/volunteer">봉사활동</NavLink>
-            <NavLink href="/donation">후원 안내</NavLink>
+            <NavLink to="/">홈</NavLink>
+            <NavLink to="/introduction">단체소개</NavLink>
+            <NavLink to="/adoption">입양</NavLink>
+            <NavLink to="/volunteer">봉사활동</NavLink>
+            <NavLink to="/donation">후원 안내</NavLink>
           </NavItemContainer>
         </NavItem>
       </StyledDiv>
@@ -62,7 +62,7 @@ const Logo = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   color: inherit;
