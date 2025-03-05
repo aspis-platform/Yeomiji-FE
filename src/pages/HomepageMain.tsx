@@ -3,7 +3,7 @@ import WelcomeBanner from "../components/MainPage/WelcomeBanner";
 import styled from "styled-components";
 import HelpYeomiji from "../components/MainPage/HelpYeomiji";
 import AdoptNTC from "../components/MainPage/AdoptNTC";
-import AiChatModal from "../components/base/AiChatModal";
+import AiChatModal from "../components/AiChat/AiChatModal";
 
 const HomepageMain = () => {
   return (
