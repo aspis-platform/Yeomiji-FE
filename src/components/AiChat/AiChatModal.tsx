@@ -4,10 +4,12 @@ import { theme } from "../../style/theme";
 import cross_img from "../../assets/cross-img.svg";
 import WelcomeView from "./Views/01_WelcomeView";
 import JobView from "./Views/02_JobViewView";
+import HomeView from "./Views/03_HomeView";
 
 const AiChatModal: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [job, setJob] = useState("");
+  const [home, setHome] = useState("");
 
   const goToNext = () => {
     setCurrentScreen(currentScreen + 1);
@@ -16,12 +18,16 @@ const AiChatModal: React.FC = () => {
   const screenTitles = [
     {
       title: "당신에게 잘 맞는 반려 견종을 찾아보세요",
-      subtitle: "AI가 당신에게 맞는 애견을 찾아드려요"
+      subtitle: "AI가 당신에게 맞는 애견을 찾아드려요",
     },
     {
       title: "직업을 알려주세요",
-      subtitle: "추천에 필요합니다. AI는 개인정보를 암호화고 저장하지 않아요"
-    }
+      subtitle: "추천에 필요합니다. AI는 개인정보를 암호화고 저장하지 않아요",
+    },
+    {
+      title: "집 형태를 알려주세요",
+      subtitle: "추천에 필요합니다. AI는 개인정보를 암호화고 저장하지 않아요",
+    },
   ];
 
   return (
@@ -36,16 +42,14 @@ const AiChatModal: React.FC = () => {
         </CloseButton>
       </TopContainer>
 
-      {currentScreen === 0 && (
-        <WelcomeView onNext={goToNext} />
-      )}
+      {currentScreen === 0 && <WelcomeView onNext={goToNext} />}
 
       {currentScreen === 1 && (
-        <JobView
-          job={job} 
-          onJobChange={setJob} 
-          onNext={goToNext}
-        />
+        <JobView job={job} onJobChange={setJob} onNext={goToNext} />
+      )}
+
+      {currentScreen === 2 && (
+        <HomeView home={home} onSelectHome={setHome} onNext={goToNext} />
       )}
     </ChatContainer>
   );
@@ -62,7 +66,7 @@ const ChatContainer = styled.div`
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   justify-content: space-between;
-  
+
   z-index: 100;
   position: fixed;
   top: 50%;
