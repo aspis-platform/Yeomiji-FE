@@ -1,35 +1,30 @@
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 import AI_logo from "../../../assets/YeomijiAiLogoFull.svg";
-import APT_img from "../../../assets/APT_img.svg";
-import Villa_img from "../../../assets/Villa_img.svg";
-import house_img from "../../../assets/house_img.svg";
+import dog_3d from "../../../assets/dog_img_3d.svg";
 
-interface HomeSelectScreenProps {
-  onSelectHome: (home: string) => void;
+interface DogSizeViewProps {
+  onDogSizeSelect: (size: string) => void;
   onNext: () => void;
-  home: string;
+  dogSize: string;
 }
 
-const HomeView = (props: HomeSelectScreenProps) => {
+const DogSizeView = (props: DogSizeViewProps) => {
   const data = [
     {
-      ko: "아파트",
-      en: "Apartment",
-      img: APT_img,
-      selected: props.home === "Apartment",
+      ko: "소형견",
+      en: "S",
+      selected: props.dogSize === "S",
     },
     {
-      ko: "빌라",
-      en: "Villa",
-      img: Villa_img,
-      selected: props.home === "Villa",
+      ko: "중형견",
+      en: "M",
+      selected: props.dogSize === "M",
     },
     {
-      ko: "단독 주택",
-      en: "House",
-      img: house_img,
-      selected: props.home === "House",
+      ko: "대형견",
+      en: "L",
+      selected: props.dogSize === "L",
     },
   ];
 
@@ -39,12 +34,11 @@ const HomeView = (props: HomeSelectScreenProps) => {
         {data.map((e) => (
           <SelectionButton
             selected={e.selected}
-            onClick={() => props.onSelectHome(e.en)}
+            onClick={() => props.onDogSizeSelect(e.en)}
           >
-            <img src={e.img} />
+            <img src={dog_3d} />
             <TextContainer>
               <BigText>{e.ko}</BigText>
-              <p>{e.en}</p>
             </TextContainer>
           </SelectionButton>
         ))}
@@ -138,4 +132,4 @@ const SignatureContainer = styled.div`
   cursor: pointer;
 `;
 
-export default HomeView;
+export default DogSizeView;

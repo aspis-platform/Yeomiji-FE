@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 import AI_logo from "../../../assets/YeomijiAiLogoFull.svg";
@@ -9,19 +8,19 @@ interface JobInputScreenProps {
   onNext: () => void;
 }
 
-const JobView: React.FC<JobInputScreenProps> = ({ job, onJobChange, onNext }) => {
+const JobView = (props: JobInputScreenProps) => {
   return (
     <>
       <InputContainer>
         <input
           type="text"
           placeholder="직업을 입력하세요"
-          value={job}
-          onChange={(e) => onJobChange(e.target.value)}
+          value={props.job}
+          onChange={(e) => props.onJobChange(e.target.value)}
         />
       </InputContainer>
       <BottomSection>
-        <ContinueButton onClick={onNext}>다음</ContinueButton>
+        <ContinueButton onClick={props.onNext}>다음</ContinueButton>
         <SignatureContainer>
           <img src={AI_logo} alt="AI 로고" />
           <p>개인정보 처리방침 및 사용약관</p>
@@ -37,14 +36,14 @@ const InputContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   input {
     width: 100%;
     padding: 20px 16px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     font-size: 20px;
-    
+
     &::placeholder {
       color: #bbbbbb;
     }

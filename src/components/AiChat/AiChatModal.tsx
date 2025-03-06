@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { theme } from "../../style/theme";
 import cross_img from "../../assets/cross-img.svg";
 import WelcomeView from "./Views/01_WelcomeView";
 import JobView from "./Views/02_JobViewView";
 import HomeView from "./Views/03_HomeView";
+import HouseOwnership from "./Views/04_HouseOwnership";
+import PersonalityView from "./Views/05_PersonalityView";
+import FamilyType from "./Views/06_FamilyType";
+import DogSizeView from "./Views/07_DogSizeView";
+import ActivityRate from "./Views/08_ActivityRate";
+import ResultView from "./Views/09_ResultView";
 
-const AiChatModal: React.FC = () => {
+const AiChatModal = () => {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [job, setJob] = useState("");
   const [home, setHome] = useState("");
+  const [ownership, setOwnership] = useState("");
+  const [personality, setPersonality] = useState("");
+  const [familyType, setFamilyType] = useState("");
+  const [dogSize, setDogSize] = useState("");
+  const [activityRate, setActivityRate] = useState("");
 
   const goToNext = () => {
     setCurrentScreen(currentScreen + 1);
@@ -22,11 +33,35 @@ const AiChatModal: React.FC = () => {
     },
     {
       title: "직업을 알려주세요",
-      subtitle: "추천에 필요합니다. AI는 개인정보를 암호화고 저장하지 않아요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
     },
     {
       title: "집 형태를 알려주세요",
-      subtitle: "추천에 필요합니다. AI는 개인정보를 암호화고 저장하지 않아요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "주택 소유 여부를 알려주세요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "견주의 성격을 알려주세요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "가족 형태를 알려주세요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "선호하는 반려견 크기를 알려주세요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "선호하는 반려견의 활동량을 알려주세요",
+      subtitle: "수집한 개인정보는 Ai모델에만 전달되고 저장되지 않아요",
+    },
+    {
+      title: "당신에게 잘 맞는 반려 견종은...",
+      subtitle: "",
     },
   ];
 
@@ -51,6 +86,48 @@ const AiChatModal: React.FC = () => {
       {currentScreen === 2 && (
         <HomeView home={home} onSelectHome={setHome} onNext={goToNext} />
       )}
+
+      {currentScreen === 3 && (
+        <HouseOwnership
+          ownership={ownership}
+          onSelectOwnership={setOwnership}
+          onNext={goToNext}
+        />
+      )}
+
+      {currentScreen === 4 && (
+        <PersonalityView
+          personality={personality}
+          onSelectPersonality={setPersonality}
+          onNext={goToNext}
+        />
+      )}
+
+      {currentScreen === 5 && (
+        <FamilyType
+          familyType={familyType}
+          onFamilyTypeSelect={setFamilyType}
+          onNext={goToNext}
+        />
+      )}
+
+      {currentScreen === 6 && (
+        <DogSizeView
+          dogSize={dogSize}
+          onDogSizeSelect={setDogSize}
+          onNext={goToNext}
+        />
+      )}
+
+      {currentScreen === 7 && (
+        <ActivityRate
+          activityRate={activityRate}
+          onActivityRateSelect={setActivityRate}
+          onNext={goToNext}
+        />
+      )}
+
+      {currentScreen === 8 && <ResultView />}
     </ChatContainer>
   );
 };
@@ -80,7 +157,6 @@ const TopContainer = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  gap: 20px;
 
   img {
     width: 32px;

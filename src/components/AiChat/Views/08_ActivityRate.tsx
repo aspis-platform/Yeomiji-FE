@@ -1,35 +1,35 @@
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 import AI_logo from "../../../assets/YeomijiAiLogoFull.svg";
-import APT_img from "../../../assets/APT_img.svg";
-import Villa_img from "../../../assets/Villa_img.svg";
-import house_img from "../../../assets/house_img.svg";
+import abst_ball from "../../../assets/abstract_img_ball.svg";
+import abst_line from "../../../assets/abst_line.svg";
+import abst_spiral from "../../../assets/abst_spiral.svg";
 
-interface HomeSelectScreenProps {
-  onSelectHome: (home: string) => void;
+interface ActivityRateProps {
+  onActivityRateSelect: (size: string) => void;
   onNext: () => void;
-  home: string;
+  activityRate: string;
 }
 
-const HomeView = (props: HomeSelectScreenProps) => {
+const ActivityRate = (props: ActivityRateProps) => {
   const data = [
     {
-      ko: "아파트",
-      en: "Apartment",
-      img: APT_img,
-      selected: props.home === "Apartment",
+      ko: "조금 활발",
+      en: "S",
+      img: abst_line,
+      selected: props.activityRate === "S",
     },
     {
-      ko: "빌라",
-      en: "Villa",
-      img: Villa_img,
-      selected: props.home === "Villa",
+      ko: "보통",
+      en: "M",
+      img: abst_spiral,
+      selected: props.activityRate === "M",
     },
     {
-      ko: "단독 주택",
-      en: "House",
-      img: house_img,
-      selected: props.home === "House",
+      ko: "매우 활발",
+      en: "L",
+      img: abst_ball,
+      selected: props.activityRate === "L",
     },
   ];
 
@@ -39,12 +39,11 @@ const HomeView = (props: HomeSelectScreenProps) => {
         {data.map((e) => (
           <SelectionButton
             selected={e.selected}
-            onClick={() => props.onSelectHome(e.en)}
+            onClick={() => props.onActivityRateSelect(e.en)}
           >
             <img src={e.img} />
             <TextContainer>
               <BigText>{e.ko}</BigText>
-              <p>{e.en}</p>
             </TextContainer>
           </SelectionButton>
         ))}
@@ -138,4 +137,4 @@ const SignatureContainer = styled.div`
   cursor: pointer;
 `;
 
-export default HomeView;
+export default ActivityRate;

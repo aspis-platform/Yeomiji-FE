@@ -1,35 +1,30 @@
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 import AI_logo from "../../../assets/YeomijiAiLogoFull.svg";
-import APT_img from "../../../assets/APT_img.svg";
-import Villa_img from "../../../assets/Villa_img.svg";
 import house_img from "../../../assets/house_img.svg";
 
-interface HomeSelectScreenProps {
-  onSelectHome: (home: string) => void;
+interface HouseOwnershipProps {
+  onSelectOwnership: (home: string) => void;
   onNext: () => void;
-  home: string;
+  ownership: string;
 }
 
-const HomeView = (props: HomeSelectScreenProps) => {
+const HouseOwnership = (props: HouseOwnershipProps) => {
   const data = [
     {
-      ko: "아파트",
-      en: "Apartment",
-      img: APT_img,
-      selected: props.home === "Apartment",
+      ko: "자가 주택",
+      en: "Owner-occupied",
+      selected: props.ownership === "Owner-occupied",
     },
     {
-      ko: "빌라",
-      en: "Villa",
-      img: Villa_img,
-      selected: props.home === "Villa",
+      ko: "전세 주택",
+      en: "Chartered house",
+      selected: props.ownership === "Chartered house",
     },
     {
-      ko: "단독 주택",
-      en: "House",
-      img: house_img,
-      selected: props.home === "House",
+      ko: "월세 주택",
+      en: "Monthly Rent",
+      selected: props.ownership === "Monthly Rent",
     },
   ];
 
@@ -39,9 +34,9 @@ const HomeView = (props: HomeSelectScreenProps) => {
         {data.map((e) => (
           <SelectionButton
             selected={e.selected}
-            onClick={() => props.onSelectHome(e.en)}
+            onClick={() => props.onSelectOwnership(e.en)}
           >
-            <img src={e.img} />
+            <img src={house_img} />
             <TextContainer>
               <BigText>{e.ko}</BigText>
               <p>{e.en}</p>
@@ -98,6 +93,7 @@ const SelectionButton = styled.button<{ selected: boolean }>`
   &:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
   }
+
   cursor: pointer;
 `;
 
@@ -138,4 +134,4 @@ const SignatureContainer = styled.div`
   cursor: pointer;
 `;
 
-export default HomeView;
+export default HouseOwnership;

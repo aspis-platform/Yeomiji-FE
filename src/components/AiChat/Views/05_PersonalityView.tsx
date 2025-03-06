@@ -1,35 +1,28 @@
 import styled from "styled-components";
 import { theme } from "../../../style/theme";
 import AI_logo from "../../../assets/YeomijiAiLogoFull.svg";
-import APT_img from "../../../assets/APT_img.svg";
-import Villa_img from "../../../assets/Villa_img.svg";
-import house_img from "../../../assets/house_img.svg";
+import abst_img_ball from "../../../assets/abstract_img_ball.svg";
+import abst_img_spiral from "../../../assets/abstract_img_spiral.svg";
 
 interface HomeSelectScreenProps {
-  onSelectHome: (home: string) => void;
+  onSelectPersonality: (personality: string) => void;
   onNext: () => void;
-  home: string;
+  personality: string;
 }
 
-const HomeView = (props: HomeSelectScreenProps) => {
+const PersonalityView = (props: HomeSelectScreenProps) => {
   const data = [
     {
-      ko: "아파트",
-      en: "Apartment",
-      img: APT_img,
-      selected: props.home === "Apartment",
+      ko: "내향형",
+      en: "Introvert",
+      img: abst_img_ball,
+      selected: props.personality === "Introvert",
     },
     {
-      ko: "빌라",
-      en: "Villa",
-      img: Villa_img,
-      selected: props.home === "Villa",
-    },
-    {
-      ko: "단독 주택",
-      en: "House",
-      img: house_img,
-      selected: props.home === "House",
+      ko: "외향형",
+      en: "Extrovert",
+      img: abst_img_spiral,
+      selected: props.personality === "Extrovert",
     },
   ];
 
@@ -39,7 +32,7 @@ const HomeView = (props: HomeSelectScreenProps) => {
         {data.map((e) => (
           <SelectionButton
             selected={e.selected}
-            onClick={() => props.onSelectHome(e.en)}
+            onClick={() => props.onSelectPersonality(e.en)}
           >
             <img src={e.img} />
             <TextContainer>
@@ -78,7 +71,7 @@ const TextContainer = styled.div`
 
 const SelectionButton = styled.button<{ selected: boolean }>`
   width: 460px;
-  height: 92px;
+  height: 152px;
   background-color: white;
   border: 1px solid ${(props) => (props.selected ? "#73D1FA" : "#e0e0e0")};
   border-width: ${(props) => (props.selected ? "2px" : "1px")};
@@ -88,7 +81,7 @@ const SelectionButton = styled.button<{ selected: boolean }>`
   flex-direction: row;
   gap: 30px;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 20px;
 
   img {
     width: 80px;
@@ -138,4 +131,4 @@ const SignatureContainer = styled.div`
   cursor: pointer;
 `;
 
-export default HomeView;
+export default PersonalityView;
